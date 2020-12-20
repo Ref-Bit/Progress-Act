@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { setUploadFile } from './redux/uploadFile/uploadFile.actions';
+import UploadProgress from './components/UploadProgress';
 
 function App(props) {
   const handleAttachFile = e => {
@@ -12,9 +13,6 @@ function App(props) {
   return (
     <div className="container">
       <h1 className="text-center text-6xl text-gray-700 my-8">Progress Act</h1>
-      {/* <label>Upload Files</label>
-      <input type="file" onChange={handleAttachFile} multiple /> */}
-
       <div className="flex w-full items-center justify-center bg-grey-lighter">
         <label className="w-64 flex flex-col items-center px-4 py-6 hover:bg-white hover:text-gray-700 rounded-lg shadow-lg tracking-wide uppercase border border-gray-100 cursor-pointer text-gray-100 bg-gray-700 transition duration-300">
           <svg
@@ -29,6 +27,7 @@ function App(props) {
           <input type="file" className="hidden" onChange={handleAttachFile} multiple/>
         </label>
       </div>
+      <UploadProgress />
     </div>
   );
 }
